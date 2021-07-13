@@ -59,13 +59,13 @@ exports.createSession = catchAsync(async (req, res, next) => {
   });
 });
 
-const createOrderCheckout = catchAsync(async (session) => {
+const createOrderCheckout = async (session) => {
   const cart = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_email }))._id;
   const items = await Cart.findById(cart);
   await Order.create({ user, product: items.product });
   await Cart.findByIdAndDelete(cart);
-});
+};
 
 exports.webhookCheckout = (req, res, next) => {
   const signature = req.headers['stripe-signature'];

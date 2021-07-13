@@ -24,9 +24,6 @@ const orderSchema = new mongoose.Schema({
     enum: ['Success', 'In progress'],
     default: 'In progress',
   },
-  TotalPrice: {
-    type: Number,
-  },
   OrderDate: {
     type: Date,
     default: Date.now(),
