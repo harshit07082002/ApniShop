@@ -11,7 +11,7 @@ if (del) {
       deleteItem(id);
     } else if (e.target.matches('.img')) {
       console.log('inside');
-      window.location.href = `http://127.0.0.1:8000/item/${e.target.dataset.id}`;
+      window.location.href = `/item/${e.target.dataset.id}`;
     }
   });
 

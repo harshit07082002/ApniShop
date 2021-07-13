@@ -30,7 +30,7 @@ block content
                     p Please login to write a Review
         .items--product
             img(src=`/img/product/${data.image}` alt='product' height='100rem')
-            a(href=`http://127.0.0.1:8000/item/${data._id}`)= data.name
+            a(href=`/item/${data._id}`)= data.name
         .content
             form.signin-form.create-review(action='#')
                 h1 Tell Us about the product..

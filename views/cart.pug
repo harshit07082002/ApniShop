@@ -42,7 +42,7 @@ block content
                             img(src=`/img/product/${element.item.image}` alt='items' width='150rem' class="img" data-id=`${element.item._id}`)
                         .right
                             .title-price
-                                a#title(href=`http://127.0.0.1:8000/item/${element.item._id}`)= element.item.name
+                                a#title(href=`/item/${element.item._id}`)= element.item.name
                                 span#price &#x20B9;#{element.price}
                             p#stock In stock
                             -if(element.item.price>1000)

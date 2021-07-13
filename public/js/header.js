@@ -6,13 +6,13 @@ if (search) {
   search.addEventListener('click', () => {
     if (inputSearch.value !== '') {
       const item = inputSearch.value.split(' ').join('-');
-      window.location.href = `http://127.0.0.1:8000/product/${item}`;
+      window.location.href = `/product/${item}`;
     }
   });
   document.addEventListener('keypress', function (e) {
     if (e.keyCode === 13 && inputSearch.value !== '') {
       const item = inputSearch.value.split(' ').join('-');
-      window.location.href = `http://127.0.0.1:8000/product/${item}`;
+      window.location.href = `/product/${item}`;
     }
   });
 }
@@ -27,13 +27,13 @@ if (logout) {
 const cart = document.querySelector('.cart');
 if (cart) {
   cart.addEventListener('click', () => {
-    window.location.href = 'http://127.0.0.1:8000/cart';
+    window.location.href = '/cart';
   });
 }
 
 const orders = document.querySelector('.orders');
 if (orders) {
   orders.addEventListener('click', () => {
-    window.location.href = 'http://127.0.0.1:8000/orders';
+    window.location.href = '/orders';
   });
 }

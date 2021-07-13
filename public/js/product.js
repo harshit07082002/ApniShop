@@ -8,12 +8,12 @@ const addReview = document.querySelector('#writeReview');
 
 if (allReviews) {
   allReviews.addEventListener('click', () => {
-    window.location.href = `http://127.0.0.1:8000/reviews/${allReviews.dataset.id}`;
+    window.location.href = `/reviews/${allReviews.dataset.id}`;
   });
 }
 if (addReview) {
   addReview.addEventListener('click', () => {
-    window.location.href = `http://127.0.0.1:8000/addReview/${addReview.dataset.id}`;
+    window.location.href = `/addReview/${addReview.dataset.id}`;
   });
 }
 

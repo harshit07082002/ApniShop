@@ -48,7 +48,7 @@ exports.createSession = catchAsync(async (req, res, next) => {
     success_url: `${req.protocol}://${req.get('host')}?user=${
       req.user._id
     }&cart=${cartData._id}&price=${price}`,
-    cancel_url: `${req.protocol}://${req.get('host')}/signup`,
+    cancel_url: `${req.protocol}://${req.get('host')}/cart`,
     customer_email: req.user.email,
     client_reference_id: req.params.cartId,
     line_items: items,
@@ -73,5 +73,5 @@ exports.createOrderCheckout = catchAsync(async (req, res, next) => {
   await Cart.findByIdAndDelete(cart);
   let url = req.originalUrl.split('?');
 
-  res.redirect('http://127.0.0.1:8000/success');
+  res.redirect('/success');
 });

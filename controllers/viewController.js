@@ -313,7 +313,7 @@ exports.Profile = catchAsync(async (req, res, next) => {
   }
 
   if (!req.user) {
-    res.redirect('http://127.0.0.1:8000/signin');
+    res.redirect('/signin');
   }
 
   res.status(200).render('profile', {
@@ -341,7 +341,7 @@ exports.security = catchAsync(async (req, res, next) => {
   }
 
   if (!req.user) {
-    res.redirect('http://127.0.0.1:8000/signin');
+    res.redirect('/signin');
   }
 
   res.status(200).render('security', {
@@ -369,7 +369,7 @@ exports.allOrders = catchAsync(async (req, res, next) => {
   }
 
   if (!req.user) {
-    res.redirect('http://127.0.0.1:8000/signin');
+    res.redirect('signin');
   }
   const orders = await Order.find({ status: 'In progress' }).sort('_id');
   if (orders) {

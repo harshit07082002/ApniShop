@@ -15,7 +15,7 @@ const getCookie = (name) => {
 };
 
 const authAxios = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/v1',
+  baseURL: '/api/v1',
   headers: { Authorization: `Bearer ${getCookie('jwt')}` },
 });
 
@@ -149,7 +149,7 @@ export const addReview = async (review, rating, product) => {
     // Checking the result
 
     if (res.data.status == 'success') {
-      window.location.href = `http://127.0.0.1:8000/item/${product}`;
+      window.location.href = `/item/${product}`;
     }
   } catch (err) {
     loader.style.display = 'none';

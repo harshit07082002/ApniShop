@@ -83,10 +83,10 @@ body {
 
 @keyframes changeImage {
   0% {
-    background-image: url('./../img//back1.jpg');
+    background-image: url('./../img/back1.jpg');
   }
   10% {
-    background-image: url('./../img//back1.jpg');
+    background-image: url('./../img/back1.jpg');
   }
   35% {
     background-image: url('./../img/back2.jpg');
