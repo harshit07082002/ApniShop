@@ -36,15 +36,15 @@ block content
             hr
             .cards.groceriesCards
                 each items of groceries
-                
+                    
                     .card(data-id=`${items._id}`)
-                        img(src=`./img/product/${items.image}` alt= items.name height='130px')
+                        img(src=`/img/product/${items.image}` alt= items.name height='130px')
                         .stars
                             -for(let i=0;i<items.avgRating;i++){ 
                             img(src='/img/star.png' alt='star' height='20rem')
                             -}
                         p.title= items.name 
-                        p.price= `₹ ${items.price1}
+                        p.price= `₹${items.price1}`
             
 block end 
     script(src="/js/home.js") 
