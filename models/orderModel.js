@@ -26,7 +26,6 @@ const orderSchema = new mongoose.Schema({
   },
   TotalPrice: {
     type: Number,
-    required: [true, 'Please add Price'],
   },
   OrderDate: {
     type: Date,

@@ -16,6 +16,7 @@ const viewRouter = require('./router/viewRouter');
 const cartRouter = require('./router/cartRouter');
 const orderRouter = require('./router/orderRouter');
 const compression = require('compression');
+const orderController = require('./controllers/orderController');
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +29,12 @@ const limit = ratelimit({
 app.use('/api', limit);
 
 // Body Parser Middlewere
+app.post(
+  '/webhook-checkout',
+  express.raw({ type: 'application/json' }),
+  orderController.webhookCheckout
+);
+
 app.use(express.json({ limit: '10kb' }));
 
 app.use(helmet());

@@ -2,6 +2,7 @@ const catchAsync = require('./catchAsync');
 const apiError = require('../utils/apiError');
 const Order = require('../models/orderModel');
 const Cart = require('../models/cartModel');
+const User = require('../models/userModel');
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 exports.createOrder = catchAsync(async (req, res, next) => {
@@ -45,9 +46,7 @@ exports.createSession = catchAsync(async (req, res, next) => {
   });
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
-    success_url: `${req.protocol}://${req.get('host')}?user=${
-      req.user._id
-    }&cart=${cartData._id}&price=${price}`,
+    success_url: `${req.protocol}://${req.get('host')}/success`,
     cancel_url: `${req.protocol}://${req.get('host')}/cart`,
     customer_email: req.user.email,
     client_reference_id: req.params.cartId,
@@ -60,18 +59,30 @@ exports.createSession = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.createOrderCheckout = catchAsync(async (req, res, next) => {
-  const user = req.query.user;
-  const cart = req.query.cart;
-  const price = req.query.price;
-  console.log(user + ' ' + cart);
-  if (!user || !cart) {
-    return next();
-  }
+exports.createOrderCheckout = catchAsync(async (session) => {
+  const cart = session.client_reference_id;
+  const user = (await User.findOne({ email: session.customer_email }))._id;
   const items = await Cart.findById(cart);
-  await Order.create({ user, product: items.product, TotalPrice: price });
+  await Order.create({ user, product: items.product });
   await Cart.findByIdAndDelete(cart);
-  let url = req.originalUrl.split('?');
-
-  res.redirect('/success');
 });
+
+exports.webhookCheckout = (req, res, next) => {
+  const signature = req.headers['stripe-signature'];
+
+  let event;
+  try {
+    event = stripe.webhooks.constructEvent(
+      req.body,
+      signature,
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
+  } catch (err) {
+    return res.status(400).send(`Webhook error: ${err.message}`);
+  }
+
+  if (event.type === 'checkout.session.completed')
+    createOrderCheckout(event.data.object);
+
+  res.status(200).json({ received: true });
+};
