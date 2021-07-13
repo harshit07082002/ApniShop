@@ -35,6 +35,7 @@ exports.homePage = catchAsync(async (req, res, next) => {
   const clothes = await Product.find({ productType: 'Shoes & Clothing' }).limit(
     6
   );
+  const groceries = await Product.find({ productType: 'Groceries' }).limit(6);
 
   //Change Name and Price
 
@@ -44,6 +45,10 @@ exports.homePage = catchAsync(async (req, res, next) => {
   });
 
   clothes.forEach((element) => {
+    element.name = checkTitle(element.name);
+    element.price1 = commaNumber(element.price);
+  });
+  groceries.forEach((element) => {
     element.name = checkTitle(element.name);
     element.price1 = commaNumber(element.price);
   });
@@ -63,6 +68,7 @@ exports.homePage = catchAsync(async (req, res, next) => {
     title: 'Amazon',
     electronics,
     clothes,
+    groceries,
     count,
   });
 });

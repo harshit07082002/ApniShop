@@ -258,5 +258,95 @@
         "image": "image20.jpg",
         "productType": "Shoes & Clothing",
         "about": "Care Instructions: Machine Wash \n Fit Type: Regular \n BV2663-380_TWILIGHT MARSH/WHITE"
+    },
+    {
+        "name": "Saffola Honey, 100% Pure NMR tested Honey, Squeezy Pack, 2 x 400g (Buy 1 Get 1 Free)",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 310,
+        "image": "image21.jpg",
+        "productType": "Groceries",
+        "about": "Saffola honey is exactly like how honey should be – 100% Pure and natural \n No added sugar \n Saffola honey contains natural antioxidants which help build immunity \n Saffola honey is tested using the latest nmr technology to ensure it is free from any adulteration \n Saffola honey is a rich source of nutrition for you and your family"
+    },
+    {
+        "name": "Bournvita Health Drink Jar, 1 kg",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 361,
+        "image": "image22.jpg",
+        "productType": "Groceries",
+        "about": "Cadbury Bournvita is a delicious chocolate health drink which is enriched with Vitamin (D,B2,B9,B12). \n The combination of calcium, vitamins and minerals helps multiply the power of milk \n It is a malted chocolate drink mix that can be enjoyed piping hot or deliciously cold \n Cadbury Bournvita is a nutrition brand with a 70 year legacy in India \n Country of Origin: India"
+    },
+    {
+        "name": "Amazon Brand - Vedaka Popular Toor Dal, 1kg",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 127,
+        "image": "image23.jpg",
+        "productType": "Groceries",
+        "about": "Store in a cool dry place"
+    },
+    {
+        "name": "Kissan Fresh Tomato Ketchup, with 100% Real Tomatoes, 950 g",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 120,
+        "image": "image24.jpg",
+        "productType": "Groceries",
+        "about": "Kissan sources 100% of its tomatoes from sustainable sources thereby helping create and support several local smallholder farmers' livelihoods \n Is easy to pour and use and can be enjoyed with every snack \n Made with 100% real tomatoes \n Turns a boring meal into an empty tiffin \n Enjoy it best with samosas, pakodas, noodles or Roti roll for an interesting tiffin meal \n Carefully sealed in impermeable glass packaging to retain the best flavour and taste of product"
+    },
+    {
+        "name": "Brooke Bond Red Label Tea , 500g",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 265,
+        "image": "image25.jpg",
+        "productType": "Groceries",
+        "about": "High quality blend of tea rich in taste \n Taste of togetherness \n Processed in the unique Brooke Bond Tea Excellence Center \n The taste of Brooke Bond Red Label tea helps you spread warmth and cheer in your family \n Understanding your need for uncompromising consistent quality to delight your senses \n Brooke Bond Red Label stands for making the world a more welcoming place"
+    },
+    {
+        "name": "Maggi 2-Minute Noodles Masala, 70g (Pack of 12)",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 130,
+        "image": "image26.jpg",
+        "productType": "Groceries",
+        "about": "MAGGI 2-Minute Masala Noodles is an instant noodles brand manufactured by Nestle \n Made with the finest quality spices and ingredients \n Country of Origin: India \n Ready in 2 minutes, perfect meal for a hang out or house party \n Contains a noodle cake and the Favourite Masala Tastemaker inside, for a quick 2 minute preparation"
+    },
+    {
+        "name": "Zandu Pure Honey, 250g",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 99,
+        "image": "image27.jpg",
+        "productType": "Groceries",
+        "about": "100% guaranteed purity \n 0% added sugar, no added C3/ C4/Rice/ Corn/ Cane Sugar \n Every batch is tested in an independent German Laboratory, sugar addition test reports for all batches are available on zandu pure honey website \n Pure honey has myriads of nutritional benefits - it has natural anti-oxidants, enzymes and essential minerals \n Pure honey is known to help in weight management and can be consumed daily as a healthier substitute for sugar"
+    },
+    {
+        "name": "Taj Mahal Tea South, Rich & Flavourful Chai, 500 g (Premium blend)",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 290,
+        "image": "image28.jpg",
+        "productType": "Groceries",
+        "about": "Taj Mahal Teas are Tasted, graded and perfectly blended at the Brooke bond Tea Excellence Centre \n Taj Mahal tea comes in a Unique Flavor Lock pack \n A cup of Taj Mahal tea invites you to cheer your senses \n Perfect balance of strength and flavor \n Blended Since 1966 \n Also available in Tea bags \n Tea Form : Powder \n Flavor : Plain"
+    },
+    {
+        "name": "Tata Salt Lite, Low Sodium, 1kg",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 34,
+        "image": "image29.jpg",
+        "productType": "Groceries",
+        "about": "Low-sodium salt specially formulated to provide 15% lower sodium than regular salt \n Designed to provide consumers a convenient means to take preventive measures towards keeping the blood pressure and weight of family members in check \n A low sodium salt that would assist management of blood pressure without compromising on the taste of food"
+    },
+    {
+        "name": "Miltop California Almonds, 1kg",
+        "avgRating": 4,
+        "totalRatings": 0,
+        "price": 805,
+        "image": "image30.jpg",
+        "productType": "Groceries",
+        "about": "Replacement Guaranty \n California Origin \n Free shipping anywhere in India"
     }
 ]

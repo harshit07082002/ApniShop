@@ -34,15 +34,17 @@ block content
         .container
             h2 Grocery
             hr
-            .cards
-                .card
-                    img(src='./img/iphone.jpg' alt='product' height='160px')
-                    .stars
-                        img(src='./img/star.png' alt='star' height='20rem')
-                        img(src='./img/star.png' alt='star' height='20rem')
-                        img(src='./img/star.png' alt='star' height='20rem')
-                    p.title Iphone 12
-                    p.price 70,000
+            .cards.groceriesCards
+                each items of groceries
+                
+                    .card(data-id=`${items._id}`)
+                        img(src=`./img/product/${items.image}` alt= items.name height='130px')
+                        .stars
+                            -for(let i=0;i<items.avgRating;i++){ 
+                            img(src='/img/star.png' alt='star' height='20rem')
+                            -}
+                        p.title= items.name 
+                        p.price= `₹ ${items.price1}
             
 block end 
     script(src="/js/home.js") 
