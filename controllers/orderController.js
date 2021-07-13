@@ -59,7 +59,7 @@ exports.createSession = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.createOrderCheckout = catchAsync(async (session) => {
+const createOrderCheckout = catchAsync(async (session) => {
   const cart = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_email }))._id;
   const items = await Cart.findById(cart);
@@ -67,22 +67,22 @@ exports.createOrderCheckout = catchAsync(async (session) => {
   await Cart.findByIdAndDelete(cart);
 });
 
-exports.webhookCheckout = (req, res, next) => {
-  const signature = req.headers['stripe-signature'];
+// exports.webhookCheckout = (req, res, next) => {
+//   const signature = req.headers['stripe-signature'];
 
-  let event;
-  try {
-    event = stripe.webhooks.constructEvent(
-      req.body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET
-    );
-  } catch (err) {
-    return res.status(400).send(`Webhook error: ${err.message}`);
-  }
+//   let event;
+//   try {
+//     event = stripe.webhooks.constructEvent(
+//       req.body,
+//       signature,
+//       process.env.STRIPE_WEBHOOK_SECRET
+//     );
+//   } catch (err) {
+//     return res.status(400).send(`Webhook error: ${err.message}`);
+//   }
 
-  if (event.type === 'checkout.session.completed')
-    createOrderCheckout(event.data.object);
+//   if (event.type === 'checkout.session.completed')
+//     createOrderCheckout(event.data.object);
 
-  res.status(200).json({ received: true });
-};
+//   res.status(200).json({ received: true });
+// };
