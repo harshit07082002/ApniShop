@@ -22,3 +22,10 @@ mongoose
 const server = app.listen(process.env.PORT, () => {
   console.log('Server Started');
 });
+
+process.on('SIGTERM', () => {
+  console.log('👋 SIGTERM RECEIVED. Shutting down gracefully');
+  server.close(() => {
+    console.log('💥 Process terminated!');
+  });
+});

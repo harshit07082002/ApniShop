@@ -6,18 +6,18 @@ const { promisify } = require('util');
 
 //Sign jwt
 
-const signJWT = (id, res) => {
+const signJWT = (id, res, req) => {
   const token = jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,
   });
-  const cokkieOption = {
+  res.cookie('jwt', token, {
     expires: new Date(
-      Date.now() + process.env.COOKIEEXPIRE * 24 * 60 * 60 * 1000
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
-  };
-  if (process.env.NODE_ENV === 'production') cokkieOption.secure = true;
+    httpOnly: true,
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+  });
 
-  res.cookie('jwt', token, cokkieOption);
   return token;
 };
 
@@ -28,7 +28,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      token: signJWT(user._id, res),
+      token: signJWT(user._id, res, req),
     },
   });
 });
@@ -57,7 +57,7 @@ exports.signin = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    token: signJWT(user._id, res),
+    token: signJWT(user._id, res, req),
   });
 });
 
@@ -128,7 +128,7 @@ exports.changePassword = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    token: signJWT(user._id, res),
+    token: signJWT(user._id, res, req),
   });
 });
 
@@ -141,7 +141,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    token: signJWT(user._id, res),
+    token: signJWT(user._id, res, req),
   });
 });
 
@@ -168,7 +168,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    token: signJWT(user._id, res),
+    token: signJWT(user._id, res, req),
   });
 });
 
