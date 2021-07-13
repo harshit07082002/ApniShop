@@ -15,6 +15,7 @@ const path = require('path');
 const viewRouter = require('./router/viewRouter');
 const cartRouter = require('./router/cartRouter');
 const orderRouter = require('./router/orderRouter');
+const compression = require('compression');
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +36,7 @@ app.use(mongoSanitize());
 app.use(xss());
 app.use(hpp());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(compression());
 app.use((req, res, next) => {
   res.setHeader(
     'Content-Security-Policy',
