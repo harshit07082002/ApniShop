@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Orders</title>
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/media_header.css" />
+    <link rel="stylesheet" href="./css/footer_media.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
+    <link rel="stylesheet" href="./css/allOrders_media.css" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="logo" id="nav">
+          <img
+            src="./img/logo.png"
+            alt="Amazon"
+            class="amazon"
+            height="30rem"
+          />
+        </a>
+        <div class="slide_bar">
+          <div class="form">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              required
+              placeholder="Search"
+            />
+            <a href="#">
+              <img
+                src="./img/outline_search_black_24dp.png"
+                alt="search"
+                class="searchLogo"
+                height="10px"
+            /></a>
+          </div>
+
+          <a href="#" class="signin"> Sign in </a>
+          <a href="#" class="signin">Sign up</a>
+          <!-- 
+            <a href="#" class="profile"
+              ><img src="./img/default.jpg" alt="photo" />Your Profile</a
+            >
+            <a href="#" class="signin">Logout</a> -->
+          <button class="orders">
+            <p>Returns</p>
+            <p class="bold1">& Orders</p>
+          </button>
+          <div class="cart">
+            <p>0</p>
+            <img
+              src="./img/outline_shopping_cart_white_24dp.png"
+              alt="cart"
+              height="40rem"
+            />
+          </div>
+        </div>
+        <div class="lines">
+          <div class="first"></div>
+          <div class="second"></div>
+          <div class="third"></div>
+        </div>
+      </nav>
+    </header>
+    <script src="./js/slide.js"></script>
+    <!-- <main>
+      <div class="shooping-cart">
+        <div class="headings">
+          <h1>Your Orders</h1>
+          <p>Price</p>
+        </div>
+        <hr />
+        <div class="items-cart">
+          <p class="noOrders">You have not placed any orders!!</p>
+        </div>
+      </div>
+    </main> -->
+    <main>
+      <div class="shooping-cart">
+        <div class="headings">
+          <h1>All Orders</h1>
+        </div>
+        <hr />
+        <div class="items-cart">
+          <div class="item">
+            <div class="left">
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/I/81aWyRY67SS._SL1500_.jpg"
+                alt="items"
+                width="150rem"
+              />
+            </div>
+            <div class="right">
+              <div class="title-price">
+                <a href="#" id="title"
+                  >Noise ColoFit Pro 3 Smartwatch - Rose Pink
+                </a>
+                <span id="price">₹4990</span>
+              </div>
+
+              <p><small>ORDER # 405-6130293-1899555</small></p>
+
+              <p>Ordered on : 07/08/2002</p>
+              <div class="title-price">
+                <a href="#" id="title">User Details </a>
+                <button class="order-Delivered">Delivered-Order</button>
+              </div>
+              <p>Name: Harshit</p>
+              <p>Email: aroraharshit2002@gmail.com</p>
+              <p>Address: b-33 jhilmil</p>
+              <p>PinCode: 110095</p>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="left-one">
+        <a href="https://www.instagram.com/harshit07__/" target="__parent"
+          ><img src="./img/insta.png" alt="insta"
+        /></a>
+        <a href="#nav">Back To Top</a>
+      </div>
+      <div class="right-one">
+        <p>&copy;</p>
+        <div class="log">
+          <img src="img/logo.png" alt="" height="30rem" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

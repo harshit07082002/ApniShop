@@ -1,0 +1,53 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: rgb(234, 237, 237);
+}
+.contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50rem;
+  margin: auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.tick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+i {
+  color: rgb(12, 243, 12);
+  font-size: 3rem;
+  margin: 0 1rem;
+}
+.tick p {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.desc {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.9rem;
+  font-weight: 500;
+}
+
+.contain a {
+  background-color: rgb(244, 208, 121);
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: 500;
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+.contain a:hover {
+  background-color: rgb(233, 183, 67);
+}

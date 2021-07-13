@@ -1,0 +1,16 @@
+@media screen and (max-width: 486px) and (min-width: 0px) {
+  .content,
+  .signnup,
+  .signnin {
+    width: 18rem !important;
+    /* background-color: red; */
+  }
+}
+@media screen and (max-width: 370px) and (min-width: 0px) {
+  .content,
+  .signnup,
+  .signnin {
+    width: 13rem !important;
+    /* background-color: red; */
+  }
+}

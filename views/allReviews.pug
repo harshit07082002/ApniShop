@@ -1,0 +1,55 @@
+extends base
+
+block css 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title All Reviews
+    link(rel='stylesheet' href='/css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='/css/media_header.css')
+    link(rel='stylesheet' href='/css/footer_media.css')
+    link(rel='stylesheet' href='/css/footer.css')
+    link(rel='stylesheet' href='/css/product.css')
+    link(rel='stylesheet' href='/css/product_media.css')
+    link(rel='shortcut icon' href='/img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+block content 
+    h2 Product
+    .items--product
+        img(src=`/img/product/${data.image}` alt='product' height='100rem')
+        a(href=`http://127.0.0.1:8000/item/${data._id}`)= data.name
+    -if(review.length>0)
+        .reviews
+            h3 Reviews
+            .ratings-row
+                .ratings
+                        -for(let i=0;i<data.avgRating;i++)
+                            img(src='/img/star.png' alt='star' height='20rem')
+                p= ` ${data.avgRating} out of 5`
+            p#topps Top Reviews
+            .top-reviews
+                each person of review 
+                    .oneReview
+                        .profile1
+                            img(src=`/img/${person.user.photo}` alt='image' height='40rem')
+                            p= person.user.name
+                        .rate
+                            -for(let i=0;i<person.rating;i++)
+                                img(src='/img/star.png' alt='star' height='15rem')
+                        p.review= person.review
+
+    -if(review.length==0)        
+        .reviews
+            h3 Reviews
+            .ratings-row
+                .ratings
+                    -for(let i=0;i<data.avgRating;i++)
+                            img(src='/img/star.png' alt='star' height='20rem')
+                p 4 out of 5
+            p#topps Top Reviews
+            .top-reviews
+                p.no No reviews Found!!

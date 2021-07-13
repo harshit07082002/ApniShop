@@ -1,0 +1,10 @@
+@media screen and (max-width: 1075px) and (min-width: 0px) {
+  .contain {
+    width: fit-content;
+    /* background-color: red; */
+  }
+}
+.tick p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}

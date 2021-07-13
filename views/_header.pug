@@ -1,0 +1,34 @@
+
+nav
+  a#nav.logo(href='/')
+    img.amazon(src='/img/logo.png' alt='Amazon' height='30rem')
+  .slide_bar
+    .form
+      if(slug)
+        input#search(type='text' name='search' required='' placeholder='Search' value=`${slug}` autocomplete="off")
+      else 
+        input#search(type='text' name='search' required='' placeholder='Search' autocomplete="off")
+      a
+        img.searchLogo(src='/img/outline_search_black_24dp.png' alt='search' height='10px')
+    if user
+      a.profile(href='http://127.0.0.1:8000/profile')
+        img(src='/img/default.jpg' alt='photo')
+        | Your Profile
+      a.signin.logoutt Logout
+
+    else 
+      <a href="/signin" class="signin"> Sign in </a>
+      <a href="/signup" class="signin">Sign up</a>
+
+    button.orders
+      p Returns
+      p.bold1 &amp; Orders
+    .cart
+      p#countItem= count
+      img(src='/img/outline_shopping_cart_white_24dp.png' alt='cart' height='40rem')
+  .lines
+    .first
+    .second
+    .third
+
+script(src="/js/bundle3.js") 

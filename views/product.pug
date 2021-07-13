@@ -1,0 +1,142 @@
+extends base
+
+block css 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Product
+    link(rel='stylesheet' href='/css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='/css/media_header.css')
+    link(rel='stylesheet' href='/css/footer_media.css')
+    link(rel='stylesheet' href='/css/footer.css')
+    link(rel='stylesheet' href='/css/product.css')
+    link(rel='stylesheet' href='/css/product_media.css')
+    link(rel='shortcut icon' href='/img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+
+
+block content 
+    .error
+        .success
+            .error-left
+                img(src='/img/error.png' alt='error' height='60rem')
+            .error-right
+                h4 There was a Problem
+                p Wrong password
+    .main
+        .loader
+         img(src='/img/loader1.png' alt='loader' height='80rem')
+        .left
+            img(src=`/img/product/${data.image}` alt='image' width='450rem')
+        .right
+            h1= data.name
+            .rating-row
+                .ratings
+                    -for(let i=0;i<data.avgRating;i++)
+                        img(src='/img/star.png' alt='star' height='20rem')
+                p= `${data.totalRatings} ratings`
+            hr
+            .price
+                small Price:
+                p  &#x20B9; #{data.price1}
+            -if(data.price>1000)
+                p.delivery Free Delivery
+            .icons
+                .trust
+                    img(src='/img/replacement.png' alt='replacement' height='40rem')
+                    p 10 Days
+                    p Replacement
+                div
+                    img(src='/img/delivery.png' alt='replacement' height='40rem')
+                    p Amazon
+                    p Delivered
+                -if(data.warranty>0)
+                    div
+                        img(src='/img/warranty.png' alt='replacement' height='40rem')
+                        p 1 Year Warranty
+                div
+                    img(src='/img/nocontactDelivery.png' alt='replacement' height='40rem')
+                    p No-contact
+                    p Delivery
+            hr
+            p.stock1 In stock
+            .pro
+                select#qty(name='qty')
+                    option(value='1') Qty: 1
+                    option(value='2') Qty: 2
+                    option(value='3') Qty: 3
+                    option(value='4') Qty: 4
+                    option(value='5') Qty: 5
+                    option(value='6') Qty: 6
+                    option(value='7') Qty: 7
+                    option(value='8') Qty: 8
+                    option(value='9') Qty: 9
+                    option(value='10') Qty: 10
+                button.cart1(data-id=`${data._id}`) Add to Cart
+            -if(data.features.length>0)
+                h4 Features
+                ul.features
+                    each value of data.features
+                        li #{value}
+            h4 About this Item
+            ul.about
+                -const array=data.about.split('\n')
+                each value of array
+                    li #{value}
+    hr
+    -if(review.length>0)
+        .reviews
+            h3 Reviews
+            .ratings-row
+                .ratings
+                        -for(let i=0;i<data.avgRating;i++)
+                            img(src='/img/star.png' alt='star' height='20rem')
+                p= ` ${data.avgRating} out of 5`
+            p#topps Top Reviews
+            .top-reviews
+                each person of review 
+                    .oneReview
+                        .profile1
+                            img(src=`/img/${person.user.photo}` alt='image' height='40rem')
+                            p= person.user.name
+                        .rate
+                            -for(let i=0;i<person.rating;i++)
+                                img(src='/img/star.png' alt='star' height='15rem')
+                        p.review= person.review
+
+    -if(review.length==0)        
+        .reviews
+            h3 Reviews
+            .ratings-row
+                .ratings
+                    -for(let i=0;i<data.avgRating;i++)
+                            img(src='/img/star.png' alt='star' height='20rem')
+                p 4 out of 5
+            p#topps Top Reviews
+            .top-reviews
+                p.no No reviews Found!!
+
+
+
+    .addReviews
+        -if(review.length>0)
+            button.yees.seeAll#allReviews(data-id=`${data._id}`)
+                .allReview.write
+                    p  See all reviews
+                    .slant-lines
+                        .s-line1
+                        .s-line2
+        -if(flag)
+            button.yees.seeAll#writeReview(data-id=`${data._id}`)
+                .allReview.write
+                    p  Write a review
+                    .slant-lines
+                        .s-line1
+                        .s-line2
+
+block end 
+    script(src="/js/bundle5.js") 

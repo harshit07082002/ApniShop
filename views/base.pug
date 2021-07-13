@@ -1,0 +1,35 @@
+doctype html
+head
+   block css
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title #{title} 
+    link(rel='stylesheet' href='/css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='/css/media_header.css')
+    link(rel='stylesheet' href='/css/footer_media.css')
+    link(rel='stylesheet' href='/css/footer.css')
+    link(rel='stylesheet' href='/css/main.css')
+    link(rel='shortcut icon' href='/img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+
+body 
+    //Header
+    header 
+        include _header
+    script(src='/js/slide.js')
+
+    main 
+        block content 
+            h1 Hello world
+
+    //Footer
+    footer 
+        include _footer
+
+block end 
+    //- script(src="./js/bundle2.js") 

@@ -1,0 +1,53 @@
+@media screen and (max-width: 765px) and (min-width: 0px) {
+  main {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 449px) and (min-width: 0px) {
+  #title {
+    font-size: 1rem;
+  }
+  .left img {
+    width: 5rem;
+  }
+  .title-price {
+    flex-direction: column;
+  }
+  .headings h1 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 299px) and (min-width: 0px) {
+  .row {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #space {
+    display: none;
+  }
+}
+@media screen and (max-width: 832px) and (min-width: 0px) {
+  .noOrders {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 340px) and (min-width: 0px) {
+  .order--item {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 771px) and (min-width: 0px) {
+  .one {
+    display: flex;
+    flex-direction: column;
+  }
+  .addError {
+    width: fit-content;
+  }
+  .addError * {
+    font-size: 1rem;
+  }
+  .one img {
+    height: 3rem;
+  }
+}

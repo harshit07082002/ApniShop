@@ -1,0 +1,58 @@
+extends base
+
+block css 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Orders
+    link(rel='stylesheet' href='./css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='./css/media_header.css')
+    link(rel='stylesheet' href='./css/footer_media.css')
+    link(rel='stylesheet' href='./css/footer.css')
+    link(rel='stylesheet' href='./css/cart.css')
+    link(rel='stylesheet' href='./css/cart_media.css')
+    link(rel='shortcut icon' href='./img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+block content 
+    -if(orders==undefined || orders.length==0)
+        .shooping-cart
+            .headings
+                h1 Your Orders
+                p Price
+            hr
+            .items-cart
+                p.noOrders You have not placed any orders!!
+
+    -else
+        .shooping-cart
+            .headings
+                h1 Your Orders
+            hr
+            .items-cart
+                 each items1 of orders   
+                    each order of items1.product
+                        .item.order--item
+                            .left
+                                img(src=`/img/product/${order.item.image}` id="left-img" alt='items' width='150rem')
+                            .right
+                                .title-price
+                                    a#title(href=`http://127.0.0.1:8000/item/${order.item.id}`)= order.item.name
+                                    span#price &#x20B9;#{order.price1}
+                                p
+                                    small ORDER: #{items1._id}
+                                .status-order
+                                    p Status:  
+                                    span.status  #{items1.status}
+                                p Ordered on : #{items1.OrderDate.getDate()}-#{items1.OrderDate.getMonth()+1}-#{items1.OrderDate.getFullYear()}
+                                p QTY: #{order.qty}
+                                p
+                                    b  User Details:
+                                p Name: #{items1.user.name}
+                                p Email: #{items1.user.email}
+                                p Address: #{items1.user.address}
+                                p Pincode: #{items1.user.pincode}
+                        hr

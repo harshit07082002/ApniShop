@@ -1,0 +1,58 @@
+extends base
+
+block css 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title=`Amazon: ${title}`
+    link(rel='stylesheet' href='/css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='/css/media_header.css')
+    link(rel='stylesheet' href='/css/footer_media.css')
+    link(rel='stylesheet' href='/css/footer.css')
+    link(rel='stylesheet' href='/css/search.css')
+    link(rel='stylesheet' href='/css/search_media.css')
+    link(rel='shortcut icon' href='/img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+
+block content 
+    
+    if data.length==0
+        .addError
+                .one
+                    .img
+                        img(src='/img/11104-min.jpg' alt='' height='300vw')
+                    .eror1
+                        h1 OOPS..
+                        h1 NO RESULT FOUND :(
+
+    else    
+        .heading
+            h1 Search Result for
+            -const name=title .split('-').join(' '); 
+            h2 &quot;#{name} &quot;
+        hr
+        .elements
+            each element1 of data
+                .element
+                    .left
+                        img.main_image(src=`/img/product/${element1.image}` alt='product'  width="150rem" data-id=`${element1._id}`  )
+                    .info
+                        p.title(data-id=`${element1._id}`)= element1.name
+                        .ratings
+                            img(src='/img/star.png' alt='star' height='20rem')
+                            img(src='/img/star.png' alt='star' height='20rem')
+                            img(src='/img/star.png' alt='star' height='20rem')
+                            img(src='/img/star.png' alt='star' height='20rem')
+                        .price(data-id=`${element1._id}`)
+                            small &#x20B9;
+                            p.price1= element1.price1
+                        -if(element1.price>1000)
+                            p Free Delivery by Amazon
+                hr
+
+block end 
+    script(src="/js/search.js") 

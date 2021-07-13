@@ -1,0 +1,269 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p,
+li,
+h1,
+h4 {
+  cursor: default;
+}
+.left {
+  margin: 1rem;
+  flex: 1;
+}
+.main {
+  display: flex;
+  margin: 1rem 0 2rem 0;
+  /* justify-content: ; */
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+.right h1 {
+  font-weight: 500;
+  margin: 1rem;
+  /* text-align: center; */
+}
+.pro {
+  display: flex;
+  flex-direction: column;
+}
+.ratings {
+  margin-left: 1rem;
+}
+.rating-row {
+  display: flex;
+}
+.rating-row p {
+  margin-left: 1rem;
+  color: rgb(0, 113, 133);
+}
+hr {
+  width: 97%;
+  border-top: 1px solid rgba(49, 48, 48, 0.342);
+  margin: 0 auto;
+}
+.price {
+  display: flex;
+  margin-left: 1.7rem;
+  margin-top: 0.8rem;
+  align-items: center;
+}
+.price p {
+  font-size: 1.4rem;
+  margin-left: 0.4rem;
+  color: rgb(177, 39, 4);
+}
+.delivery {
+  margin: 0.5rem 1.7rem;
+  color: rgb(5, 133, 82);
+}
+.icons {
+  display: flex;
+  margin: 1rem 0;
+}
+.icons div {
+  margin: 0 1rem;
+  text-align: center;
+}
+.icons div p {
+  font-size: 0.8rem;
+  color: rgb(0, 115, 137);
+}
+.stock1 {
+  margin-left: 2rem;
+  margin: 1rem 1rem;
+  /* font-size: 20rem; */
+  color: rgb(5, 133, 82);
+}
+#qty {
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+select {
+  cursor: pointer;
+  padding: 0.4rem;
+  color: black;
+  background-color: rgb(240, 242, 242);
+  font-weight: 500;
+  outline: none;
+  border-radius: 0.4rem;
+  border: 0.1px solid rgb(85, 82, 82);
+  width: 5rem;
+  margin: 1rem 0;
+}
+select:hover {
+  background-color: rgb(218, 226, 226);
+}
+.cart1 {
+  min-width: 28%;
+  width: fit-content;
+  height: fit-content;
+  min-height: 2.4rem;
+  padding: 0.5rem;
+  background-color: rgb(255, 164, 28);
+  /* border-color: #a88734 #9c7e31; */
+  border: none;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  margin-bottom: 1rem;
+  /* font-size: 1rem; */
+}
+.cart1:hover {
+  background-color: rgb(241, 188, 52);
+}
+h4 {
+  margin: 1rem 0;
+  color: rgb(23, 167, 23);
+  font-weight: 600;
+}
+ul li {
+  margin: 0.3rem 1.5rem;
+}
+ul {
+  list-style: circle;
+}
+.reviews {
+  display: flex;
+  flex-direction: column;
+}
+.reviews h3 {
+  font-size: 2rem;
+  margin: 0.5rem 2rem;
+}
+.ratings-row {
+  display: flex;
+  margin: 0 1rem;
+  font-weight: 600;
+  color: rgb(77, 75, 75);
+  font-size: 1.2rem;
+  text-align: center;
+}
+.ratings-row .ratings {
+  margin: 0 1rem;
+}
+#topps {
+  margin: 1.5rem;
+  /* margin-bottom: 0rem; */
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: start;
+}
+.profile1 {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+.profile1 p {
+  margin: 0 1rem;
+}
+.rate {
+  margin-left: 2rem;
+}
+.review {
+  margin: 0.5rem 2rem;
+  width: 50rem;
+  text-align: start;
+}
+
+.oneReview {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: 2rem 0;
+}
+.no {
+  margin: 0 2rem;
+  margin-bottom: 10rem;
+}
+.addReviews {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.slant-lines .s-line1 {
+  height: 0.1rem;
+  width: 0.7rem;
+  background-color: black;
+  transform: rotateZ(50deg);
+  margin-bottom: 0.4rem;
+}
+.slant-lines .s-line2 {
+  height: 0.1rem;
+  width: 0.7rem;
+  background-color: black;
+  transform: rotateZ(-50deg);
+}
+.allReview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.slant-lines {
+  margin: 0.5rem;
+}
+.seeAll {
+  height: fit-content;
+  min-height: 3rem;
+  cursor: pointer;
+  background-color: transparent;
+  border-left: none;
+  border-right: none;
+  border: 1px solid rgb(212, 204, 204);
+  outline: none;
+  margin: 0.4rem 0;
+}
+.write {
+  font-size: 1rem;
+}
+.yees {
+  margin: 1rem 2rem !important;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 11px rgba(177, 168, 168, 0.603);
+}
+footer {
+  margin-top: 5rem;
+}
+.items--product {
+  display: flex;
+  /* flex-direction: column; */
+  margin: 3rem;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+.items--product a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+.items--product a:hover {
+  color: rgb(196, 85, 0);
+}
+
+h2 {
+  margin: 2rem 1rem;
+  font-size: 2rem;
+  color: black;
+}
+.error {
+  width: fit-content;
+  text-align: center;
+  margin: auto;
+}
+.success {
+  text-align: center;
+}

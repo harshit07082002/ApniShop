@@ -1,0 +1,30 @@
+extends base
+block css
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Success
+    link(rel='stylesheet' href='./css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' href='./css/media_header.css')
+    link(rel='stylesheet' href='./css/footer_media.css')
+    link(rel='stylesheet' href='./css/footer.css')
+    link(rel='stylesheet' href='./css/success.css')
+    link(rel='stylesheet' href='./css/success_media.css')
+    link(rel='shortcut icon' href='./img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+
+block content 
+    .contain
+        .tick
+            i.ion-ios-checkmark-outline
+            p Thank you, your order has been Confirmed!!
+        p.desc
+            | Thank You for shopping with us. We&apos;ll send a confirmation once your
+            | item has shipped, if you would like to check your order(s) status
+            | please click the button below.
+        a(href='http://127.0.0.1:8000/orders') Go to my orders

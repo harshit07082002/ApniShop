@@ -1,0 +1,28 @@
+@media screen and (max-width: 491px) and (min-width: 0px) {
+  .content {
+    width: 18rem;
+  }
+  .content textarea {
+    width: 90%;
+  }
+  .items--product a {
+    font-size: 1rem;
+  }
+  .items--product img {
+    height: 5rem;
+  }
+}
+@media screen and (max-width: 326px) and (min-width: 0px) {
+  .content {
+    width: 14rem;
+  }
+  .content textarea {
+    width: 90%;
+  }
+  .items--product a {
+    font-size: 1rem;
+  }
+  .items--product img {
+    height: 5rem;
+  }
+}

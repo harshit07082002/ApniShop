@@ -1,0 +1,45 @@
+extends base
+
+block css 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Profile
+    link(rel='stylesheet' href='./css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='./css/media_header.css')
+    link(rel='stylesheet' href='./css/footer_media.css')
+    link(rel='stylesheet' href='./css/footer.css')
+    link(rel='stylesheet' href='./css/profile.css')
+    link(rel='stylesheet' href='./css/media_profile.css')
+    link(rel='shortcut icon' href='./img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+block content 
+    h1 Your Account
+    .container
+        .item.your-order
+            .left1
+                img(src='https://images-na.ssl-images-amazon.com/images/G/31/x-locale/cs/ya/images/Box._CB485927553_.png' height='70rem' alt='orders')
+            .right1
+                p#ord Your Orders
+                p Track,return,or buy things again
+        .item.securty
+            .left1
+                img(src='https://images-na.ssl-images-amazon.com/images/G/31/x-locale/cs/ya/images/sign-in-lock._CB485931504_.png' height='70rem' alt='orders')
+            .right1
+                p#ord Login &amp; Security
+                p Edit name, email, address, password
+        
+        if(user.role=='admin')
+            .item.allOrders
+                .left1
+                    img(src='https://images-na.ssl-images-amazon.com/images/G/31/x-locale/cs/ya/images/Box._CB485927553_.png' height='70rem' alt='orders')
+                .right1
+                    p#ord All orders
+                    p Approve other orders
+
+block end 
+    script(src="/js/profile.js") 

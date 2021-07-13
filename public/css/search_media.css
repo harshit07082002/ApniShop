@@ -1,0 +1,57 @@
+@media screen and (max-width: 550px) and (min-width: 0px) {
+  .left {
+    min-width: 10rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+  .info p {
+    font-size: 0.6rem;
+  }
+  .price1 {
+    font-size: 1rem !important;
+  }
+  .ratings img {
+    height: 0.8rem;
+  }
+}
+@media screen and (max-width: 355px) and (min-width: 0px) {
+  .heading h1,
+  .heading h2 {
+    font-size: 1rem;
+  }
+  .element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .left img {
+    height: 5rem;
+    width: auto;
+    margin-bottom: 1.2rem;
+  }
+  .left {
+    width: 0rem !important;
+    overflow: hidden;
+    justify-content: center;
+    /* margin: 0; */
+  }
+  .info {
+    margin: 0 1rem;
+    width: 100%;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 511px) and (min-width: 0px) {
+  .img img {
+    height: 180px;
+  }
+  .eror1 {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: rgb(248, 165, 11);
+  }
+}

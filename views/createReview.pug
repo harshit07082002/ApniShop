@@ -1,0 +1,59 @@
+extends base
+
+block css 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title All Reviews
+    link(rel='stylesheet' href='/css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='/css/media_header.css')
+    link(rel='stylesheet' href='/css/footer_media.css')
+    link(rel='stylesheet' href='/css/createReview.css')
+    link(rel='stylesheet' href='/css/createReview_media.css')
+    link(rel='stylesheet' href='/css/footer.css')
+    link(rel='shortcut icon' href='/img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+block content 
+    if(user)
+        .loader
+            img(src='/img/loader1.png' alt='loader' height='80rem')
+        .error
+            .success
+                .error-left
+                    img(src='/img/error.png' alt='error' height='60rem')
+                .error-right
+                    h4 There was a problem
+                    p Please login to write a Review
+        .items--product
+            img(src=`/img/product/${data.image}` alt='product' height='100rem')
+            a(href=`http://127.0.0.1:8000/item/${data._id}`)= data.name
+        .content
+            form.signin-form.create-review(action='#')
+                h1 Tell Us about the product..
+                p#enter-review Enter review
+                textarea#review(name='review' cols='50' placeholder='write reveiw here' rows='3' required data-id=`${data._id}`) 
+                p#enterRating Enter Rating
+                select#rating(name='rating')
+                    option(value='1') &#x2B50; 1
+                    option(value='2') &#x2B50; 2
+                    option(value='3') &#x2B50; 3
+                    option(value='4') &#x2B50; 4
+                    option(value='5') &#x2B50; 5
+                br
+                input#submit(type='submit' value='Submit')
+
+    else 
+        .error.err
+            .success
+                .error-left
+                    img(src='/img/error.png' alt='error' height='60rem')
+                .error-right
+                    h4 You do not have Permission
+                    p Please login to write a Review
+
+block end 
+    script(src="/js/bundle4.js") 
