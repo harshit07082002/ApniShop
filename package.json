@@ -4,7 +4,7 @@
   "description": "this is amazon clone",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "dev": "webpack --mode production"
   },
   "author": "Harshit Arora",
@@ -41,5 +41,8 @@
     "bable-loader": "^0.0.1-security",
     "webpack": "^5.42.1",
     "webpack-cli": "^4.7.2"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
