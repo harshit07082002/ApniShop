@@ -4,13 +4,11 @@ import { checkout } from './getToken';
 
 const del = document.querySelector('.items-cart');
 if (del) {
-  console.log('clicked');
   del.addEventListener('click', (e) => {
     if (e.target.matches('.delete')) {
       const id = e.target.dataset.id;
       deleteItem(id);
     } else if (e.target.matches('.img')) {
-      console.log('inside');
       window.location.href = `/item/${e.target.dataset.id}`;
     }
   });

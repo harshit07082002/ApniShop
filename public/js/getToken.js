@@ -63,7 +63,6 @@ export const signup = async (
     document.querySelector('.error-right p').textContent =
       err.response.data.message;
     loader.style.display = 'none';
-    console.log(err.response.data.message);
   }
 };
 
