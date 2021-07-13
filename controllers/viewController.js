@@ -154,13 +154,13 @@ exports.showProduct = catchAsync(async (req, res, next) => {
     }
   }
   let flag = false;
-  const addReview = await Order.find({ user: req.user });
-  addReview.forEach((element) => {
-    element.product.forEach((e) => {
-      console.log(e.item + ' ' + query);
-      if (e.item.id == query) flag = true;
-    });
-  });
+  // const addReview = await Order.find({ user: req.user });
+  // addReview.forEach((element) => {
+  //   element.product.forEach((e) => {
+  //     console.log(e.item + ' ' + query);
+  //     if (e.item.id == query) flag = true;
+  //   });
+  // });
 
   res.status(200).render('product', {
     title: query,
