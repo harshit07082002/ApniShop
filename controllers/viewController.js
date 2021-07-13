@@ -371,7 +371,9 @@ exports.allOrders = catchAsync(async (req, res, next) => {
   if (!req.user) {
     res.redirect('signin');
   }
-  const orders = await Order.find({ status: 'In progress' }).sort('_id');
+  const orders = await Order.find({ status: 'In progress' }).sort([
+    ['OrderDate', -1],
+  ]);
   if (orders) {
     orders.forEach((e) => {
       e.product.forEach((element) => {
