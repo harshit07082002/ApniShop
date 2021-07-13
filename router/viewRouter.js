@@ -8,9 +8,7 @@ viewRouter.use(authControoler.checkLogin);
 
 viewRouter.route('/reviews/:id').get(controller.showReviews);
 viewRouter.route('/addReview/:id').get(controller.addReview);
-viewRouter
-  .route('/')
-  .get(orderController.createOrderCheckout, controller.homePage);
+viewRouter.route('/').get(controller.homePage);
 viewRouter.get('/product/:slug', controller.Search);
 viewRouter.route('/signup').get(controller.signup);
 viewRouter.route('/signin').get(controller.signin);
