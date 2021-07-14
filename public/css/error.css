@@ -1,0 +1,30 @@
+.error {
+  display: block;
+  text-align: center;
+}
+.success {
+  justify-content: center;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+.error-right p {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 808px) and (min-width: 0px) {
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .error-right p {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+  .error-left img {
+    height: 4rem;
+  }
+}

@@ -248,17 +248,18 @@ exports.ShowOrders = catchAsync(async (req, res, next) => {
 
     orders = await Order.find({ user: req.user._id }).sort([['OrderDate', -1]]);
   }
+  console.log('inside3');
 
   let count = 0;
   let Price = 0;
   if (cart == undefined) count = 0;
   else {
+    console.log(cart);
     for (let i = 0; i < cart.product.length; i++) {
       count += cart.product[i].qty;
-      Price += cart.product[i].qty * cart.product[i].item.price;
-      cart.product[i].price = commaNumber(cart.product[i].item.price);
     }
   }
+  console.log('inside2');
 
   if (orders) {
     orders.forEach((e) => {
@@ -267,8 +268,10 @@ exports.ShowOrders = catchAsync(async (req, res, next) => {
       });
     });
   }
+  console.log('inside1');
 
   const TotalPrice = commaNumber(Price);
+  console.log('inside');
 
   res.status(200).render('orders', {
     title: 'query',

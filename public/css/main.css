@@ -101,3 +101,9 @@ body {
     background-image: url('./../img/back3.jpg');
   }
 }
+
+@media screen and (max-width: 695px) and (min-width: 0px) {
+  .card .abc {
+    height: 80px;
+  }
+}
