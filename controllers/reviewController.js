@@ -13,8 +13,7 @@ exports.createReview = catchAsync(async (req, res, next) => {
   const addReview = await Order.find({ user: req.user });
   addReview.forEach((element) => {
     element.product.forEach((e) => {
-      console.log(e.item + ' ' + query);
-      if (e.item.id == query) flag = true;
+      if (e.item.id == req.body.product) flag = true;
     });
   });
 

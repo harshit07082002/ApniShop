@@ -154,13 +154,13 @@ exports.showProduct = catchAsync(async (req, res, next) => {
     }
   }
   let flag = false;
-  // const addReview = await Order.find({ user: req.user });
-  // addReview.forEach((element) => {
-  //   element.product.forEach((e) => {
-  //     console.log(e.item + ' ' + query);
-  //     if (e.item.id == query) flag = true;
-  //   });
-  // });
+  const addReview = await Order.find({ user: req.user });
+  addReview.forEach((element) => {
+    element.product.forEach((e) => {
+      console.log(e.item + ' ' + query);
+      if (e.item.id == query) flag = true;
+    });
+  });
 
   res.status(200).render('product', {
     title: query,
@@ -196,6 +196,7 @@ exports.showReviews = catchAsync(async (req, res, next) => {
 exports.addReview = catchAsync(async (req, res, next) => {
   const query = req.params.id;
   const data = await Product.findById(query);
+  console.log(query);
   let cart = undefined;
 
   if (req.user) cart = await Cart.findOne({ user: req.user._id });

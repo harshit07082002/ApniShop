@@ -151,6 +151,7 @@ export const addReview = async (review, rating, product) => {
       window.location.href = `/item/${product}`;
     }
   } catch (err) {
+    console.log(err);
     loader.style.display = 'none';
     document.querySelector('.error').style.display = 'block';
     document.querySelector('.error-right p').textContent =
