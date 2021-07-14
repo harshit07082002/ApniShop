@@ -106,4 +106,7 @@ body {
   .card .abc {
     height: 80px;
   }
+  .container h2 {
+    font-size: 1rem;
+  }
 }
