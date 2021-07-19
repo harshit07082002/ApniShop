@@ -6,6 +6,7 @@ if (form) {
     e.preventDefault();
     const form = new FormData();
     const featuresArray = document.querySelector('#features').value.split('\n');
+    console.log(featuresArray);
     form.append('name', document.querySelector('#name').value);
     form.append('price', document.querySelector('#price').value);
     form.append('productType', document.querySelector('#type').value);

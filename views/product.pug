@@ -77,11 +77,19 @@ block content
                     option(value='9') Qty: 9
                     option(value='10') Qty: 10
                 button.cart1(data-id=`${data._id}`) Add to Cart
-            -if(data.features.length>0)
+            -if(data.features.length==1){
+            -const features=data.features[0].split(',')   
+                h4 Features
+                ul.features
+                    each value of features
+                        li #{value}
+                        -}
+            -else if(data.features.length>1){
                 h4 Features
                 ul.features
                     each value of data.features
                         li #{value}
+                        -}
             h4 About this Item
             ul.about
                 -let array=data.about.split('\n')
