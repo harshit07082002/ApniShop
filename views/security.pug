@@ -43,6 +43,9 @@ block content
         .content
             form.submitChanges(action='#'  )
                 h1 Change Details
+                .images
+                    img(src=`/img/users/${user.photo}` alt='user' height='100rem')
+                    input#photo(type='file' name='photo' accept='image/*')
                 p#name-name Name
                 input#name(type='text' name='name' value= user.name)
                 p#p-email Email

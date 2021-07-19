@@ -5,11 +5,15 @@ const submitPass = document.querySelector('.change-Password');
 if (submit) {
   submit.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const address = document.querySelector('#address').value;
-    const PinCode = document.querySelector('#PinCode').value;
-    changeDetails(name, email, address, PinCode);
+    console.log(document.getElementById('photo').files[0]);
+    const form = new FormData();
+    form.append('name', document.querySelector('#name').value);
+    form.append('email', document.querySelector('#email').value);
+    form.append('address', document.querySelector('#address').value);
+    form.append('pincode', document.querySelector('#PinCode').value);
+    if (document.getElementById('photo').files[0])
+      form.append('photo', document.getElementById('photo').files[0]);
+    changeDetails(form);
   });
 }
 if (submitPass) {

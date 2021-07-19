@@ -17,7 +17,11 @@ userRouter.route('/signup').post(authController.signup);
 userRouter.route('/logout').get(authController.logout);
 userRouter
   .route('/updateMe')
-  .patch(authController.protect, userController.editUser);
+  .patch(
+    authController.protect,
+    userController.uploadPhoto,
+    userController.editUser
+  );
 userRouter.route('/me').get(authController.protect, userController.me);
 userRouter.route('/changePassword').post(authController.changePassword);
 userRouter.route('/resetPassword/:token').post(authController.resetPassword);

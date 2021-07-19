@@ -320,7 +320,7 @@ export const checkout = async (ID) => {
     console.log(err.response.data.message);
   }
 };
-export const changeDetails = async (name, email, address, pincode) => {
+export const changeDetails = async (data) => {
   const loader = document.querySelector('.loader');
   const count = document.querySelector('#countItem');
   try {
@@ -331,12 +331,7 @@ export const changeDetails = async (name, email, address, pincode) => {
     const res = await authAxios({
       method: 'PATCH',
       url: `users/updateme`,
-      data: {
-        name,
-        email,
-        address,
-        pincode,
-      },
+      data,
     });
 
     //Removing Loader and Error displayer
@@ -350,6 +345,9 @@ export const changeDetails = async (name, email, address, pincode) => {
     console.log(res);
     if (res.data.status == 'success') {
       document.querySelector('.error-2').style.display = 'block';
+      setTimeout(() => {
+        document.querySelector('.error-2').style.display = 'none';
+      }, 3000);
     }
   } catch (err) {
     loader.style.display = 'none';
@@ -357,9 +355,12 @@ export const changeDetails = async (name, email, address, pincode) => {
     if (err.response.data.message == 'jwt malformed') {
       error = 'Please Sign in to continue';
     }
-    document.querySelector('.error').style.display = 'block';
     document.querySelector('.error-right p').textContent = error;
-    console.log(err.response.data.message);
+    document.querySelector('.error').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.error').style.display = 'none';
+    }, 3000);
   }
 };
 export const updateStatus = async (id) => {
@@ -436,6 +437,9 @@ export const changePasswordDetails = async (
       document.querySelector('#current-password').value = '';
       document.querySelector('#password').value = '';
       document.querySelector('#confirm-password').value = '';
+      setTimeout(() => {
+        document.querySelector('.error-2').style.display = 'none';
+      }, 3000);
     }
   } catch (err) {
     loader.style.display = 'none';
@@ -445,18 +449,17 @@ export const changePasswordDetails = async (
     }
     document.querySelector('.error').style.display = 'block';
     document.querySelector('.error-right p').textContent = error;
+    document.querySelector('#current-password').value = '';
+    document.querySelector('#password').value = '';
+    document.querySelector('#confirm-password').value = '';
+    setTimeout(() => {
+      document.querySelector('.error').style.display = 'none';
+    }, 3000);
     console.log(err.response.data.message);
   }
 };
 
-export const addProduct = async (
-  name,
-  price,
-  productType,
-  warranty,
-  features,
-  about
-) => {
+export const addProduct = async (data) => {
   const loader = document.querySelector('.loader');
   const count = document.querySelector('#countItem');
   try {
@@ -464,22 +467,10 @@ export const addProduct = async (
 
     loader.style.display = 'block';
 
-    const featuresArray = features.split('\n');
-    console.log(featuresArray);
-    console.log(about);
-
     const res = await authAxios({
       method: 'POST',
       url: `products`,
-      data: {
-        name,
-        price,
-        productType,
-        warranty,
-        features: featuresArray,
-        about,
-        image: 'image2.jpg',
-      },
+      data,
     });
 
     //Removing Loader and Error displayer

@@ -16,7 +16,7 @@ footer {
   margin-top: 2rem;
 }
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .content {
   border: 1px solid rgba(82, 79, 79, 0.315);
@@ -106,4 +106,16 @@ input:focus {
 }
 #account {
   margin-top: 1rem;
+}
+.images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.images img {
+  border-radius: 100%;
+  margin: 1rem;
+}
+#photo {
+  border: none;
 }

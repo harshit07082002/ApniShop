@@ -12,7 +12,7 @@ nav
         img.searchLogo(src='/img/outline_search_black_24dp.png' alt='search' height='10px')
     if user
       a.profile(href='/profile')
-        img(src='/img/default.jpg' alt='photo')
+        img(src=`/img/users/${user.photo}` alt='photo')
         .youu 
           p= `Your Profile `
           p.you= `Hello ${user.name.split(' ')[0]}`

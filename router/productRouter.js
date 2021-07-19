@@ -9,6 +9,7 @@ Productrouter.route('/')
   .post(
     authController.protect,
     authController.restrictTo,
+    controller.uploadPhoto,
     controller.addProduct
   )
   .get(controller.getAllProducts);
