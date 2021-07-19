@@ -73,6 +73,9 @@ textarea {
 #submit1:hover {
   background-color: rgb(241, 188, 52);
 }
+#photo {
+  border: none;
+}
 
 @media screen and (max-width: 530px) and (min-width: 0px) {
   form {
