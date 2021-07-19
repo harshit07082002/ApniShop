@@ -20,6 +20,7 @@ userRouter
   .patch(
     authController.protect,
     userController.uploadPhoto,
+    userController.resizeUserPhoto,
     userController.editUser
   );
 userRouter.route('/me').get(authController.protect, userController.me);
