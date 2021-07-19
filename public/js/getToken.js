@@ -493,6 +493,12 @@ export const addProduct = async (
     console.log(res);
     if (res.data.status == 'success') {
       document.querySelector('.error-2').style.display = 'block';
+      document.querySelector('#name').value = '';
+      document.querySelector('#price').value = '';
+      document.querySelector('#type').value = '';
+      document.querySelector('#warranty').value = '';
+      document.querySelector('#features').value = '';
+      document.querySelector('#about').value = '';
       setTimeout(() => {
         console.log('yes');
         document.querySelector('.error-2').style.display = 'none';
@@ -506,6 +512,10 @@ export const addProduct = async (
     }
     document.querySelector('.error').style.display = 'block';
     document.querySelector('.error-right p').textContent = error;
+    setTimeout(() => {
+      console.log('yes');
+      document.querySelector('.error').style.display = 'none';
+    }, 5000);
     console.log(err.response.data.message);
   }
 };

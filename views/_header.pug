@@ -13,7 +13,9 @@ nav
     if user
       a.profile(href='/profile')
         img(src='/img/default.jpg' alt='photo')
-        | Your Profile
+        .youu 
+          p= `Your Profile `
+          p.you= `Hello ${user.name.split(' ')[0]}`
       a.signin.logoutt Logout
 
     else 

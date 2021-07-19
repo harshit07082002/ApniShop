@@ -10,7 +10,7 @@ block content
                 each items of electronics
                 
                     .card(data-id=`${items._id}`)
-                        img.abc(src=`./img/product/${items.image}` alt= items.name height='160px')
+                        img.abc(src=`./img/product/${items.image}` alt= items.name height='100rem')
                         .stars
                             -for(let i=0;i<items.avgRating;i++){ 
                             img(src='/img/star.png' alt='star' height='20rem')
@@ -24,7 +24,7 @@ block content
                 each items of clothes
                 
                     .card(data-id=`${items._id}`)
-                        img.abc(src=`./img/product/${items.image}` alt= items.name height='130px')
+                        img.abc(src=`./img/product/${items.image}` alt= items.name height='100rem')
                         .stars
                             -for(let i=0;i<items.avgRating;i++){ 
                             img(src='/img/star.png' alt='star' height='20rem')
@@ -38,7 +38,7 @@ block content
                 each items of groceries
                     
                     .card(data-id=`${items._id}`)
-                        img.abc(src=`/img/product/${items.image}` alt= items.name height='130px')
+                        img.abc(src=`/img/product/${items.image}` alt= items.name height='100rem')
                         .stars
                             -for(let i=0;i<items.avgRating;i++){ 
                             img(src='/img/star.png' alt='star' height='20rem')

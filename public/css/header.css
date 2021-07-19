@@ -205,6 +205,20 @@ nav {
   display: none;
 }
 
+.youu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+}
+
+.you {
+  font-size: 0.7rem;
+  margin-top: 0.2rem;
+}
+
 .success {
   display: flex;
   align-items: center;
