@@ -21,4 +21,7 @@ viewRouter.route('/profile/security').get(controller.security);
 viewRouter
   .route('/profile/AllOrders')
   .get(authControoler.restrictTo, controller.allOrders);
+viewRouter
+  .route('/profile/addProduct')
+  .get(authControoler.restrictTo, controller.addOrders);
 module.exports = viewRouter;

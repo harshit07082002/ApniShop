@@ -1,0 +1,58 @@
+extends base
+
+block css 
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Signup
+    link(rel='stylesheet' href='/css/header.css')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='/css/media_header.css')
+    link(rel='stylesheet' href='/css/footer_media.css')
+    link(rel='stylesheet' href='/css/footer.css')
+    link(rel='stylesheet' href='/css/addItem.css')
+    link(rel='shortcut icon' href='/img/favicon.png' type='image/x-icon')
+    script(src='https://js.stripe.com/v3/')
+
+block content 
+    .loader
+        img(src='/img/loader1.png' alt='loader' height='80rem')
+    .error
+        .success
+            .error-left
+                img(src='/img/error.png' alt='error' height='60rem')
+            .error-right
+                h4 There was a Problem
+                p Wrong password
+    .error-2
+        .success1
+            .error1-left
+                i.ion-ios-checkmark-outline
+            .error1-right
+                h4 Success
+                p You successfully changed your account!
+
+    form.add(action='')
+        h1 Enter Product Details
+        p#addName1 Product Name
+        input#name(type='text' name='name' required='')
+        p#addPrice Price
+        input#price(type='number' name='price' required='')
+        select#type(name='type')
+            option(value='') ---Select Product type---
+            option(value='Electronics') Electronics
+            option(value='Shoes & Clothing') Shoes &amp; Clothing
+            option(value='Groceries') Groceries
+        p#addWarranty Warranty
+        input#warranty(type='number' name='warranty' value='0')
+        p#addFeatures Features (Add every feature in new line)
+        textarea#features(name='features' cols='30' rows='5' placeholder='Fast Charging \n 2 gb ram')
+        p#addAbout
+            | About the Product (Add every feature in new line)
+        textarea#about(name='about' required='' cols='30' rows='5' placeholder='Fast Charging \n 2 gb ram')
+        input#submit1(type='submit' value='Submit')
+
+block end 
+    script(src="/js/bundle9.js") 

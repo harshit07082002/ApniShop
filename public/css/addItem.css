@@ -1,0 +1,84 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  border: 1px solid rgba(82, 79, 79, 0.315);
+  width: 90%;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.add input {
+  padding: 0.4rem;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid black;
+  margin: 0.5rem 0;
+}
+
+select {
+  cursor: pointer;
+  padding: 0.4rem;
+  color: black;
+  background-color: rgb(240, 242, 242);
+  font-weight: 500;
+  outline: none;
+  border-radius: 0.4rem;
+  border: 0.1px solid rgb(85, 82, 82);
+  width: fit-content;
+  margin: 1rem 0;
+}
+select:hover {
+  background-color: rgb(218, 226, 226);
+}
+
+textarea {
+  margin: 0.5rem 0;
+  width: 98%;
+  padding: 0.5rem;
+}
+
+#addAbout,
+#addFeatures,
+#addName1,
+#addWarranty,
+#addPrice {
+  font-weight: 600;
+}
+
+#addFeatures,
+#addAbout {
+  margin: 0.5rem 0;
+}
+
+#submit1 {
+  background-color: rgb(240, 193, 75);
+  border-color: #a88734 #9c7e31;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+#submit1:hover {
+  background-color: rgb(241, 188, 52);
+}
+
+@media screen and (max-width: 530px) and (min-width: 0px) {
+  form {
+    width: fit-content;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+}

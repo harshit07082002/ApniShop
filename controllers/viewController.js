@@ -398,3 +398,30 @@ exports.allOrders = catchAsync(async (req, res, next) => {
     orders,
   });
 });
+exports.addOrders = catchAsync(async (req, res, next) => {
+  let cart = undefined;
+  if (req.user) {
+    cart = await Cart.findOne({ user: req.user._id });
+  }
+
+  let count = 0;
+  let Price = 0;
+  if (cart == undefined) count = 0;
+  else {
+    for (let i = 0; i < cart.product.length; i++) {
+      count += cart.product[i].qty;
+      Price += cart.product[i].qty * cart.product[i].item.price;
+      cart.product[i].price = commaNumber(cart.product[i].item.price);
+    }
+  }
+
+  if (!req.user) {
+    res.redirect('signin');
+  }
+
+  res.status(200).render('addProduct', {
+    title: 'query',
+    count,
+    cart,
+  });
+});

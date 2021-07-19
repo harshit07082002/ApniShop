@@ -448,3 +448,64 @@ export const changePasswordDetails = async (
     console.log(err.response.data.message);
   }
 };
+
+export const addProduct = async (
+  name,
+  price,
+  productType,
+  warranty,
+  features,
+  about
+) => {
+  const loader = document.querySelector('.loader');
+  const count = document.querySelector('#countItem');
+  try {
+    // Adding Loader
+
+    loader.style.display = 'block';
+
+    const featuresArray = features.split('\n');
+    console.log(featuresArray);
+    console.log(about);
+
+    const res = await authAxios({
+      method: 'POST',
+      url: `products`,
+      data: {
+        name,
+        price,
+        productType,
+        warranty,
+        features: featuresArray,
+        about,
+        image: 'image2.jpg',
+      },
+    });
+
+    //Removing Loader and Error displayer
+
+    document.querySelector('.error').style.display = 'none';
+    document.querySelector('.error-2').style.display = 'none';
+
+    loader.style.display = 'none';
+
+    // Checking the result
+    console.log(res);
+    if (res.data.status == 'success') {
+      document.querySelector('.error-2').style.display = 'block';
+      setTimeout(() => {
+        console.log('yes');
+        document.querySelector('.error-2').style.display = 'none';
+      }, 5000);
+    }
+  } catch (err) {
+    loader.style.display = 'none';
+    let error = err.response.data.message;
+    if (err.response.data.message == 'jwt malformed') {
+      error = 'Please Sign in to continue';
+    }
+    document.querySelector('.error').style.display = 'block';
+    document.querySelector('.error-right p').textContent = error;
+    console.log(err.response.data.message);
+  }
+};

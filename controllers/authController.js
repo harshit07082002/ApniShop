@@ -172,6 +172,11 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 });
 
 exports.restrictTo = (req, res, next) => {
+  if (!req.user) {
+    return next(
+      new apiError('You are not login Please login to continue', 400)
+    );
+  }
   if (req.user.active === 'false')
     return next(new apiError('User Deleted', 404));
   if (req.user.role === 'admin') return next();

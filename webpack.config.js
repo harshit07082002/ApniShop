@@ -9,6 +9,7 @@ module.exports = {
     bundle6: ['./public/js/cart.js'],
     bundle7: ['./public/js/security.js'],
     bundle8: ['./public/js/updateOrder.js'],
+    bundle9: ['./public/js/addProduct.js'],
   },
   output: {
     path: path.resolve(__dirname, 'public/js'),

@@ -84,7 +84,9 @@ block content
                         li #{value}
             h4 About this Item
             ul.about
-                -const array=data.about.split('\n')
+                -let array=data.about.split('\n')
+                -if(array.length===1){
+                  -  array=data.about.split('\\n');}
                 each value of array
                     li #{value}
     hr

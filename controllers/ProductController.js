@@ -2,8 +2,9 @@ const catchAsync = require('./catchAsync');
 const Product = require('../models/productModel');
 
 exports.addProduct = catchAsync(async (req, res, next) => {
+  req.body.about.replace('\\n', '\n');
+  console.log(req.body.about);
   const data = await Product.create(req.body);
-
   res.status(200).json({
     status: 'success',
     data: {
