@@ -197,7 +197,10 @@ export const addToCart1 = async (itemsQTY, ID) => {
   } catch (err) {
     loader.style.display = 'none';
     let error = err.response.data.message;
-    if (err.response.data.message == 'jwt malformed') {
+    if (
+      err.response.data.message == 'jwt malformed' ||
+      err.response.data.message == 'Invalid token!!'
+    ) {
       error = 'Please Sign in to buy the item';
     }
     document.querySelector('.error').style.display = 'block';

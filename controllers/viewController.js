@@ -65,7 +65,7 @@ exports.homePage = catchAsync(async (req, res, next) => {
   //Render The Page
 
   res.status(200).render('home', {
-    title: 'Amazon',
+    title: 'ApniShop',
     electronics,
     clothes,
     groceries,
