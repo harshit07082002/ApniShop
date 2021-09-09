@@ -39,7 +39,7 @@ exports.createSession = catchAsync(async (req, res, next) => {
       currency: 'INR',
       quantity: element.qty,
       images: [
-        `https://ama-zon.herokuapp.com/img/product/${element.item.image}`,
+        `https://apnishopp.herokuapp.com/img/product/${element.item.image}`,
       ],
     });
     price += element.item.price * element.qty;
