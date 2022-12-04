@@ -17,6 +17,9 @@ mongoose
   })
   .then((res) => {
     console.log('connection Succesful');
+  })
+  .catch((e) => {
+    console.log('error');
   });
 
 const server = app.listen(process.env.PORT, () => {
